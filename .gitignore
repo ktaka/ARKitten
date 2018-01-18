@@ -4,6 +4,11 @@
 /[Bb]uild/
 /[Bb]uilds/
 /Assets/AssetStoreTools*
+/Assets/Standard Assets*
+/Assets/Kitten/
+/Assets/Kitten.meta/
+/Assets/UnityARKitPlugin*
+/ARKitten/
 
 # Visual Studio 2015 cache directory
 /.vs/
