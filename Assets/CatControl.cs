@@ -40,7 +40,7 @@ public class CatControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.touchCount > 0 && hitTransform != null) {
+        if (Input.touchCount == 2 && hitTransform != null) {
             var touch = Input.GetTouch (0);
             if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved) {
                 var screenPosition = Camera.main.ScreenToViewportPoint (touch.position);
