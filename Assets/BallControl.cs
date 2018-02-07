@@ -18,8 +18,13 @@ public class BallControl : MonoBehaviour {
             if (touch.phase == TouchPhase.Began) {
                 Vector3 pos = touch.position;
                 pos.z = Camera.main.nearClipPlane * 2.0f;
-                var position = Camera.main.ScreenToWorldPoint (pos);
-                Instantiate (ballObject, position, Quaternion.identity);
+                Ray ray = Camera.main.ScreenPointToRay (pos);
+                RaycastHit hit = new RaycastHit ();
+                if (Physics.Raycast (ray, out hit) == false || hit.rigidbody == null) {
+                    var position = Camera.main.ScreenToWorldPoint (pos);
+                    GameObject obj = Instantiate (ballObject, position, Quaternion.identity);
+                    obj.GetComponent<BallOperation> ().catControl = catControl;
+                }
             }
         }
 	}
