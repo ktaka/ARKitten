@@ -9,4 +9,4 @@ UnityのAsset Storeから[ARKitのプラグイン](http://u3d.as/RTd)と[Cute Ki
 誌面掲載ソースコードの全文
 
 - [リスト1 Cat Controlのスクリプト](https://gist.github.com/ktaka/476875c22e63c4d6339b9f7451476eb6)
-- [リスト2 Cat Controlスクリプトにインタラクティブ要素を追加](ARKitten/Assets/CatControl.cs)
+- [リスト2 Cat Controlスクリプトにインタラクティブ要素を追加](https://github.com/ktaka/ARKitten/blob/master/Assets/CatControl.cs)
