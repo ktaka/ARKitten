@@ -131,7 +131,8 @@ public class CatControl : MonoBehaviour {
             GetComponent<Animation> ().Play ("Run");
         } else {
             speed = 0.2f;
-        } GetComponent<Animation> ().Play ("Walk");
+            GetComponent<Animation> ().Play ("Walk");
+        }
         arrivalTime = distance / speed;
     }
 }
