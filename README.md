@@ -6,12 +6,6 @@
 [2018年3月号](http://gihyo.jp/magazine/SD/archive/2018/201803)の記事での完成状態がコミットされています。
 
 2018年2月号での完成状態は[こちら](https://github.com/ktaka/ARKitten/tree/part_2)をご覧ください。
-<<<<<<< HEAD
-=======
-
-## 2018年3月号
-UnityのAsset Storeから[ARKitのプラグイン](http://u3d.as/RTd)と[Cute Kittenのアセット](http://u3d.as/cvs)をインポートしてからビルドしてください。
->>>>>>> Update README.md
 
 ## 2018年3月号
 UnityのAsset Storeから[ARKitのプラグイン](http://u3d.as/RTd)をインポートしてからビルドしてください。
