@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallControl : MonoBehaviour {
+public class BallControl : ControlAbstract {
     public GameObject ballObject;
     public CatControl catControl;
 
@@ -13,7 +13,7 @@ public class BallControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.touchCount == 1) {
+        if (isControllable && Input.touchCount > 0) {
             var touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began) {
                 Vector3 pos = touch.position;
