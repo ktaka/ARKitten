@@ -19,4 +19,4 @@ UnityのAsset Storeから[ARKitのプラグイン](http://u3d.as/RTd)をイン�
 
 作者の[Alexey Kuznetsov](http://leshiy3d.com/)氏に感謝します。
 
-Special thanks to [Alexey Kuznetsov](http://leshiy3d.com/), the creator of Cute Kitten.
+Special thanks to [Alexey Kuznetsov](http://leshiy3d.com/), the creator of Cute Kitten.
