@@ -318,6 +318,35 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &201203876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 201203877}
+  m_Layer: 0
+  m_Name: FoodParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &201203877
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 201203876}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 550773676}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &229804520
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +420,83 @@ MonoBehaviour:
     type: 2}
   maxPointsToShow: 10000
   particleSize: 0.01
+--- !u!1001 &550773675
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 201203877}
+    m_Modifications:
+    - target: {fileID: 4000012772204206, guid: 50147d929fb926b4eb555a4d0b89ab60, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012772204206, guid: 50147d929fb926b4eb555a4d0b89ab60, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012772204206, guid: 50147d929fb926b4eb555a4d0b89ab60, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012772204206, guid: 50147d929fb926b4eb555a4d0b89ab60, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012772204206, guid: 50147d929fb926b4eb555a4d0b89ab60, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012772204206, guid: 50147d929fb926b4eb555a4d0b89ab60, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012772204206, guid: 50147d929fb926b4eb555a4d0b89ab60, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012772204206, guid: 50147d929fb926b4eb555a4d0b89ab60, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 50147d929fb926b4eb555a4d0b89ab60, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &550773676 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000012772204206, guid: 50147d929fb926b4eb555a4d0b89ab60,
+    type: 2}
+  m_PrefabInternal: {fileID: 550773675}
+--- !u!1 &550773677 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013397514734, guid: 50147d929fb926b4eb555a4d0b89ab60,
+    type: 2}
+  m_PrefabInternal: {fileID: 550773675}
+--- !u!114 &550773678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 550773677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772f4092b527e4a56b9daea8279eb1c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitTransform: {fileID: 201203877}
+  catControl: {fileID: 1129967389}
+--- !u!135 &550773679
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 550773677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.05416504
+  m_Center: {x: 0, y: 0.000000007450581, z: -0.0000000037252903}
 --- !u!1 &555720247
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,6 +790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitTransform: {fileID: 1286139108}
+  strokingThreshold: 50
 --- !u!65 &1129967390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1033,7 +1140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1902620048
 MonoBehaviour:
   m_ObjectHideFlags: 0
