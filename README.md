@@ -7,8 +7,11 @@
 
 2018年2月号での完成状態は[こちら](https://github.com/ktaka/ARKitten/tree/part_2)をご覧ください。
 
-## 2018年3月号
+## 2018年4月号
 UnityのAsset Storeから[ARKitのプラグイン](http://u3d.as/RTd)をインポートしてからビルドしてください。
+
+### 猫とボールのアイコン
+猫とボールのアイコンのパッケージは[こちら](https://github.com/ktaka/ARKitten/raw/part_4/arkitten_textures.unitypackage)からダウンロードしてください。
 
 ### 誌面掲載ソースコードの全文
 - [リスト1 CatControlのスクリプト修正](https://github.com/ktaka/ARKitten/blob/part_3_1/Assets/CatControl.cs)
