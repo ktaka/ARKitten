@@ -35,3 +35,7 @@ UnityのAsset Storeから[ARKitのプラグイン](http://u3d.as/RTd)をイン�
   - Cute Kittenのインポート部分以外は2月号、3月号の記事の手順の通りに進められます
 
 Special thanks to [Alexey Kuznetsov](http://leshiy3d.com/), the creator of Cute Kitten.
+
+## 日本語で質問出来るフォーラム
+主にモバイル端末向けの[VRやARについて日本語で質問できるフォーラム](https://groups.google.com/d/forum/vr_ar_ja)があります。
+ご質問等ありましたら、ぜひ[そちら](https://groups.google.com/d/forum/vr_ar_ja)からお願いします。
