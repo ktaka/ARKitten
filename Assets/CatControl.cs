@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.iOS;
 using UnityEngine.EventSystems;
 
-public class CatControl : MonoBehaviour, IDragHandler {
+public class CatControl : ControlAbstract, IDragHandler {
     public Transform hitTransform;
     private Quaternion rotateFrom;
     private Quaternion rotateTo;
@@ -52,11 +52,12 @@ public class CatControl : MonoBehaviour, IDragHandler {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody> ();
+        IsControllable = true;
     }
 
     // Update is called once per frame
     void Update () {
-        if (Input.touchCount == 2 && hitTransform != null) {
+        if (IsControllable && Input.touchCount > 0 && hitTransform != null) {
             var touch = Input.GetTouch (0);
             if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved) {
                 var screenPosition = Camera.main.ScreenToViewportPoint (touch.position);

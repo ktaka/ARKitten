@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.iOS;
 
-public class FoodControl : MonoBehaviour {
+public class FoodControl : ControlAbstract {
     public Transform hitTransform;
     public CatControl catControl;
 
@@ -41,7 +41,7 @@ public class FoodControl : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.touchCount == 1 && hitTransform != null)
+        if (IsControllable && Input.touchCount > 0 && hitTransform != null)
         {
             var touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
