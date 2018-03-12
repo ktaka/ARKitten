@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ControlAbstract : MonoBehaviour {
+    public GameObject focusSquare;
     protected bool isControllable;
 
     public bool IsControllable {
@@ -15,6 +16,11 @@ public class ControlAbstract : MonoBehaviour {
             }
             return isControllable;
         }
-        set { isControllable = value; }
+        set {
+            isControllable = value;
+            if (focusSquare) {
+                focusSquare.SetActive (isControllable);
+            }
+        }
     }
 }

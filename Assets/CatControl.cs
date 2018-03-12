@@ -24,6 +24,7 @@ public class CatControl : ControlAbstract, IDragHandler {
             GetComponent<Animation> ().Play ("IdleSit");
             GetComponent<Animation> ().PlayQueued ("Idle");
             strokingNum = 0;
+            CatPreferences.addStrokingNum ();
         }
     }
 
@@ -101,7 +102,28 @@ public class CatControl : ControlAbstract, IDragHandler {
         GetComponent<Animation> ().Play ("Idle");
     }
 
+    bool checkTemper() {
+        if (((int)CatPreferences.ElapsedSecondsFromLastCared) % 20 == 0) {
+            GetComponent<Animation> ().Play ("Ithcing");
+            GetComponent<Animation> ().PlayQueued ("Idle");
+            return false;
+        }
+        if (CatPreferences.IsGoodTemper() && !isMoving) {
+            Vector3 cameraPos = Camera.main.transform.position;
+            cameraPos.y = rb.transform.position.y;
+            float dist = (cameraPos - rb.transform.position).magnitude;
+            if (dist > 1.0f) {
+                MoveTo (Camera.main.transform.position, -0.5f);
+            }
+            return false;
+        }
+        return true;
+    }
+
     void CheckObjDirection () {
+        if (checkTemper()) {
+            return;
+        }
         Vector3 objToCameraVec = GetLookVector ();
         if (objToCameraVec == Vector3.zero) {
             objToCameraVec = -Camera.main.transform.forward;
