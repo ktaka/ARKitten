@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.iOS;
+using UnityEngine.EventSystems;
 
-public class CatControl : MonoBehaviour {
+public class CatControl : ControlAbstract, IDragHandler {
     public Transform hitTransform;
     private Quaternion rotateFrom;
     private Quaternion rotateTo;
@@ -14,6 +15,17 @@ public class CatControl : MonoBehaviour {
     private float arrivalTime = 0;
     private float speed;
     private Rigidbody rb;
+    private int strokingNum = 0;
+    public int strokingThreshold = 50;
+
+    public void OnDrag (PointerEventData eventData) {
+        strokingNum++;
+        if (strokingNum > strokingThreshold) {
+            GetComponent<Animation> ().Play ("IdleSit");
+            GetComponent<Animation> ().PlayQueued ("Idle");
+            strokingNum = 0;
+        }
+    }
 
     Vector3 GetLookVector () {
         Vector3 lookVector = Camera.main.transform.position - rb.position;
@@ -40,11 +52,12 @@ public class CatControl : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody> ();
+        IsControllable = true;
     }
 
     // Update is called once per frame
     void Update () {
-        if (Input.touchCount == 2 && hitTransform != null) {
+        if (IsControllable && Input.touchCount > 0 && hitTransform != null) {
             var touch = Input.GetTouch (0);
             if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved) {
                 var screenPosition = Camera.main.ScreenToViewportPoint (touch.position);
@@ -71,11 +84,13 @@ public class CatControl : MonoBehaviour {
         } else {
             if (!isMoving) {
                 if (rotateDelta <= 0.0f) {
-                    ResetRotateAnim ();
                     CheckObjDirection ();
                 } else {
                     RotateToCamera ();
                     rotateDelta -= Time.deltaTime;
+                    if (rotateDelta <= 0.0f) {
+                        ResetRotateAnim ();
+                    }
                 }
             }
         }
@@ -114,17 +129,19 @@ public class CatControl : MonoBehaviour {
             arrivalTime -= Time.deltaTime;
             if (arrivalTime < Mathf.Epsilon) {
                 ResetRotateAnim ();
+                GetComponent<Animation> ().Play ("Meow");
+                GetComponent<Animation> ().PlayQueued ("Idle");
                 isMoving = false;
             }
             rb.MovePosition (rb.position + transform.forward * speed * Time.deltaTime); }
     }
 
-    public void MoveTo(Vector3 pos) {
+    public void MoveTo(Vector3 pos, float offset = 0.0f) {
         Vector3 planePos = pos;
         planePos.y = rb.transform.position.y;
         rb.transform.LookAt (planePos);
         Vector3 distanceVec = pos - transform.position;
-        float distance = distanceVec.magnitude;
+        float distance = distanceVec.magnitude + offset;
         isMoving = true;
         if (distance > 1.0f) {
             speed = 0.6f;

@@ -3,20 +3,26 @@
 
 ![ARKitten](ARKitten.jpg)
 
-[2018年3月号](http://gihyo.jp/magazine/SD/archive/2018/201803)の記事での完成状態がコミットされています。
+[2018年4月号](http://gihyo.jp/magazine/SD/archive/2018/201804)の記事での完成状態がコミットされています。
 
 2018年2月号での完成状態は[こちら](https://github.com/ktaka/ARKitten/tree/part_2)をご覧ください。
 
-## 2018年3月号
-UnityのAsset Storeから[ARKitのプラグイン](http://u3d.as/RTd)をインポートしてからビルドしてください。
+2018年3月号での完成状態は[こちら](https://github.com/ktaka/ARKitten/tree/part_3)をご覧ください。
+
+## 2018年4月号
+UnityのAsset Storeから[ARKitのプラグイン](http://u3d.as/RTd)と[Yughues Free Fabric Materials](https://assetstore.unity.com/packages/2d/textures-materials/fabric/yughues-free-fabric-materials-13002)をインポートしてからビルドしてください。
+
+### アイコンのパッケージ
+107ページから108ページにかけて使用する猫とボールのアイコンのパッケージは[こちらから](https://github.com/ktaka/ARKitten/raw/part_4t/arkitten_textures.unitypackage)ダウンロードしてください。
 
 ### 誌面掲載ソースコードの全文
-- [リスト1 CatControlのスクリプト修正](https://github.com/ktaka/ARKitten/blob/part_3_1/Assets/CatControl.cs)
-- [リスト2 BallControl](https://github.com/ktaka/ARKitten/blob/part_3_1/Assets/BallControl.cs)
-- [リスト3 CatControl.cs](https://github.com/ktaka/ARKitten/blob/part_3/Assets/CatControl.cs)
-- [リスト4 BallOperation.cs](https://github.com/ktaka/ARKitten/blob/part_3_2/Assets/BallOperation.cs)
-- [リスト5 BallControl](https://github.com/ktaka/ARKitten/blob/part_3/Assets/BallControl.cs)
-- [リスト6 BallOperation.cs](https://github.com/ktaka/ARKitten/blob/part_3/Assets/BallOperation.cs)
+- [リスト1 CatControl.cs](https://github.com/ktaka/ARKitten/blob/part_4_1t/Assets/CatControl.cs)
+- [リスト2 FoodControl.cs](https://github.com/ktaka/ARKitten/blob/part_4_1t/Assets/FoodControl.cs)
+- [リスト3 ControlAbstract.cs](https://github.com/ktaka/ARKitten/blob/part_4t/Assets/ControlAbstract.cs)
+- [リスト4 CatControl.cs](https://github.com/ktaka/ARKitten/blob/part_4t/Assets/CatControl.cs)
+- [リスト5 BallControl.cs](https://github.com/ktaka/ARKitten/blob/part_4t/Assets/BallControl.cs)
+- [リスト6 FoodControl.cs](https://github.com/ktaka/ARKitten/blob/part_4t/Assets/FoodControl.cs)
+- [リスト7 DropdownCallback.cs](https://github.com/ktaka/ARKitten/blob/part_4t/Assets/DropdownCallback.cs)
 
 ## Cute Kittenのアセット
 このプロジェクトで使用している猫のモデルのアセット（Cute Kitten）は元はUnityのAsset Storeからダウンロード、インポートしていました。
