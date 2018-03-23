@@ -10,7 +10,7 @@
 2018年3月号での完成状態は[こちら](https://github.com/ktaka/ARKitten/tree/part_3)をご覧ください。
 
 ## 2018年4月号
-UnityのAsset Storeから[ARKitのプラグイン](http://u3d.as/RTd)と[Yughues Free Fabric Materials](https://assetstore.unity.com/packages/2d/textures-materials/fabric/yughues-free-fabric-materials-13002)をインポートしてからビルドしてください。
+UnityのAsset Storeから[ARKitのプラグイン](http://u3d.as/RTd)、[FREE Food Pack](http://u3d.as/Mh3)、[Yughues Free Fabric Materials](https://assetstore.unity.com/packages/2d/textures-materials/fabric/yughues-free-fabric-materials-13002)をインポートしてからビルドしてください。
 
 ### アイコンのパッケージ
 107ページから108ページにかけて使用する猫とボールのアイコンのパッケージは[こちらから](https://github.com/ktaka/ARKitten/raw/part_4t/arkitten_textures.unitypackage)ダウンロードしてください。
