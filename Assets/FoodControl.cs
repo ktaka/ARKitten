@@ -17,6 +17,7 @@ public class FoodControl : ControlAbstract {
 
     void OnTriggerEnter(Collider co) {
         Invoke ("Hide", 2.0f);
+        CatPreferences.SaveLastFeedTime ();
     }
 
     bool HitTestWithResultType (ARPoint point, ARHitTestResultType resultTypes)

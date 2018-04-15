@@ -14,8 +14,9 @@ public class BallOperation : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
 
     void OnCollisionEnter(Collision co) {
         collisionCount++;
-        if (collisionCount > 1) {
+        if (collisionCount > 1 && !CatPreferences.IsStarving()) {
             catControl.MoveTo (transform.position);
+            CatPreferences.addBallPlayingNum ();
             collisionCount = 0;
         }
         yPosition = co.transform.position.y;
