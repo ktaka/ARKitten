@@ -3,6 +3,7 @@
 
 ![ARKitten](ARKitten.jpg)
 
+
 [2018年5月号](http://gihyo.jp/magazine/SD/archive/2018/201805)の記事での完成状態がコミットされています。
 
 これまでの連載の各号での完成状態は下記をご覧ください。
@@ -40,3 +41,7 @@ UnityのAsset Storeから[ARKitのプラグイン](http://u3d.as/RTd)、[FREE Fo
   - Cute Kittenのインポート部分以外は各号の記事の手順の通りに進められます
 
 Special thanks to [Alexey Kuznetsov](http://leshiy3d.com/), the creator of Cute Kitten.
+
+## 日本語で質問出来るフォーラム
+主にモバイル端末向けの[VRやARについて日本語で質問できるフォーラム](https://groups.google.com/d/forum/vr_ar_ja)があります。
+ご質問等ありましたら、ぜひ[そちら](https://groups.google.com/d/forum/vr_ar_ja)からお願いします。
