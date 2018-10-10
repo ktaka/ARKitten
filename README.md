@@ -1,7 +1,7 @@
 # ARKitten
 技術評論社の月刊誌Software Designの短期連載記事「ARKitとUnityで作るiPhone ARアプリ集中特講」で開発するサンプルのリポジトリです。
 
-[技術書典5](https://techbookfest.org/event/tbf05)でこの連載の元原稿から再構成した[本を頒布します](https://techbookfest.org/event/tbf05/circle/24830001)
+[技術書典5](https://techbookfest.org/event/tbf05)で頒布した、この連載の元原稿から再構成した[本をBOOTHに登録してあります](https://zaxis-junkie.booth.pm/items/1040624)
 
 ![ARKitten](ARKitten.jpg)
 
