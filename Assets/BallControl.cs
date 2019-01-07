@@ -9,7 +9,7 @@ public class BallControl : ControlAbstract {
 
 	// Use this for initialization
 	void Start () {
-		
+        useTouchPad = false;
 	}
 	
 	// Update is called once per frame
@@ -19,12 +19,12 @@ public class BallControl : ControlAbstract {
             if (touch.phase == TouchPhase.Began) {
                 Vector3 pos = touch.position;
                 pos.z = Camera.main.nearClipPlane * 2.0f;
-                Ray ray = Camera.main.ScreenPointToRay (pos);
-                RaycastHit hit = new RaycastHit ();
-                if (Physics.Raycast (ray, out hit) == false || hit.rigidbody == null) {
-                    var position = Camera.main.ScreenToWorldPoint (pos);
-                    GameObject obj = Instantiate (ballObject, position, Quaternion.identity);
-                    obj.GetComponent<BallOperation> ().catControl = catControl;
+                Ray ray = Camera.main.ScreenPointToRay(pos);
+                RaycastHit hit = new RaycastHit();
+                if (Physics.Raycast(ray, out hit) == false || hit.rigidbody == null) {
+                    var position = Camera.main.ScreenToWorldPoint(pos);
+                    GameObject obj = Instantiate(ballObject, position, Quaternion.identity);
+                    obj.GetComponent<BallOperation>().catControl = catControl;
                 }
             }
         }

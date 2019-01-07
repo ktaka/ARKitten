@@ -5,7 +5,6 @@ using UnityEngine.XR.iOS;
 using UnityEngine.EventSystems;
 
 public class CatControl : ControlAbstract, IDragHandler {
-    public Transform hitTransform;
     private Quaternion rotateFrom;
     private Quaternion rotateTo;
     private float rotateDelta = 0.0f;
@@ -35,7 +34,7 @@ public class CatControl : ControlAbstract, IDragHandler {
         return lookVector;
     }
 
-    bool HitTestWithResultType (ARPoint point, ARHitTestResultType resultTypes)
+    protected override bool HitTestWithResultType (ARPoint point, ARHitTestResultType resultTypes)
     {
         List<ARHitTestResult> hitResults = UnityARSessionNativeInterface.GetARSessionNativeInterface ().HitTest (point, resultTypes);
         if (hitResults.Count > 0) {
@@ -53,45 +52,18 @@ public class CatControl : ControlAbstract, IDragHandler {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody> ();
-        IsControllable = true;
     }
 
     // Update is called once per frame
     void Update () {
-        if (IsControllable && Input.touchCount > 0 && hitTransform != null) {
-            var touch = Input.GetTouch (0);
-            if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved) {
-                var screenPosition = Camera.main.ScreenToViewportPoint (touch.position);
-                ARPoint point = new ARPoint {
-                    x = screenPosition.x,
-                    y = screenPosition.y
-                };
-
-                // prioritize reults types
-                ARHitTestResultType[] resultTypes = {
-                    ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent, 
-                    // if you want to use infinite planes use this:
-                    //ARHitTestResultType.ARHitTestResultTypeExistingPlane,
-                    ARHitTestResultType.ARHitTestResultTypeHorizontalPlane, 
-                    ARHitTestResultType.ARHitTestResultTypeFeaturePoint
-                }; 
-
-                foreach (ARHitTestResultType resultType in resultTypes) {
-                    if (HitTestWithResultType (point, resultType)) {
-                        return;
-                    }
-                }
-            }
-        } else {
-            if (!isMoving) {
+        if (!isMoving) {
+            if (rotateDelta <= 0.0f) {
+                CheckObjDirection ();
+            } else {
+                RotateToCamera ();
+                rotateDelta -= Time.deltaTime;
                 if (rotateDelta <= 0.0f) {
-                    CheckObjDirection ();
-                } else {
-                    RotateToCamera ();
-                    rotateDelta -= Time.deltaTime;
-                    if (rotateDelta <= 0.0f) {
-                        ResetRotateAnim ();
-                    }
+                    ResetRotateAnim ();
                 }
             }
         }
