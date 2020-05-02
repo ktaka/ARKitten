@@ -1,6 +1,6 @@
 # ARKitten
 
-※ ARKitプラグインがAsset Storeで提供されなくなったため、代替方法を[「ARKitプラグインの状況変化について」](https://github.com/ktaka/ARKitten/wiki/ARKit%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)にまとめました。
+※ ARKitプラグインがAsset Storeで提供されなくなったため、代替方法を[「ARKitプラグインの状況変化について」](https://github.com/ktaka/ARKitten/wiki/ARKit-Plugin)にまとめました。
 
 技術評論社の月刊誌Software Designの短期連載記事「ARKitとUnityで作るiPhone ARアプリ集中特講」で開発するサンプルのリポジトリです。
 
