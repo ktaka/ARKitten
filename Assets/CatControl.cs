@@ -69,10 +69,10 @@ public class CatControl : ControlAbstract, IDragHandler {
 
                 // prioritize reults types
                 ARHitTestResultType[] resultTypes = {
+                    ARHitTestResultType.ARHitTestResultTypeEstimatedHorizontalPlane,
                     ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent, 
                     // if you want to use infinite planes use this:
                     //ARHitTestResultType.ARHitTestResultTypeExistingPlane,
-                    ARHitTestResultType.ARHitTestResultTypeHorizontalPlane, 
                     ARHitTestResultType.ARHitTestResultTypeFeaturePoint
                 }; 
 
